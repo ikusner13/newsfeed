@@ -9,6 +9,7 @@ import CommentSection from "../comments/CommentSection"
 
 // post on newsfeed. including comments
 const Post = ({ post, setPosts }) => {
+  console.log(post)
   const [showComments, setShowComments] = useState(false)
   const [toggleLiked, setToggleLiked] = useState(false)
 
@@ -38,7 +39,7 @@ const Post = ({ post, setPosts }) => {
           roundedCircle
           className="me-2"
         />
-        <UserProfileDetails />
+        <UserProfileDetails time={post.time} />
       </Card.Body>
       <Card.Body className="pt-0">
         <Card.Text>{post.post}</Card.Text>

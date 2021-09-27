@@ -26,7 +26,7 @@ const Comment = ({ comment }) => {
             <h4 className="mb-0" style={{ color: "black" }}>
               Ian Kusner
             </h4>
-            <div>11 minutes ago</div>
+            <div>{comment.time} ago</div>
           </div>
           <div className="text-primary">Professional-Student</div>
           <div className="text-dark">{comment.text}</div>

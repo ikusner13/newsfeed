@@ -21,7 +21,10 @@ const AddComment = ({ addComment, id }) => {
         data.id === id
           ? {
               ...data,
-              comments: [...data.comments, { text: comment, likes: 0 }],
+              comments: [
+                ...data.comments,
+                { text: comment, likes: 0, time: "1 minute ago" },
+              ],
             }
           : data
       )

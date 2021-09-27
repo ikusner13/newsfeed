@@ -6,9 +6,11 @@ const CommentSection = ({ setPosts, id, comments }) => {
   return (
     <>
       <AddComment addComment={setPosts} id={id} />
-      {comments.map((comment) => (
-        <Comment comment={comment} />
-      ))}
+      <div className="d-flex flex-column-reverse w-100">
+        {comments.map((comment, index) => (
+          <Comment comment={comment} key={index} />
+        ))}
+      </div>
     </>
   )
 }

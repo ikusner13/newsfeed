@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEllipsisH, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
 
 // Details to right of user profile picture on a post
-const UserProfileDetails = () => {
+const UserProfileDetails = ({ time }) => {
+  console.log(time)
   return (
     <div className="d-flex flex-column w-100">
       <div className="d-flex justify-content-between ">
@@ -16,7 +17,7 @@ const UserProfileDetails = () => {
         <FontAwesomeIcon icon={faMapMarkerAlt} className="me-1" />
         OH, USA
       </span>
-      <span style={{ fontSize: ".7rem" }}>1 minute ago</span>
+      <span style={{ fontSize: ".7rem" }}>{time} ago</span>
     </div>
   )
 }

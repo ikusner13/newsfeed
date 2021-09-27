@@ -24,6 +24,7 @@ const NewPost = ({ addPost }) => {
         id: prev.length + 1,
         post: post,
         likes: 0,
+        time: "1 minute ago",
         comments: [],
       },
     ])

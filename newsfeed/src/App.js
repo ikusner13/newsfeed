@@ -9,11 +9,13 @@ const defaultPosts = [
   {
     id: 1,
     post: "Testing the new posts / comments",
+    time: "20 minutes",
     likes: 0,
     comments: [
       {
         text: "This is what a comment looks like!",
         likes: 0,
+        time: "8 minutes",
       },
     ],
   },
@@ -23,9 +25,11 @@ function App() {
   return (
     <Container className="d-flex flex-column align-items-center">
       <NewPost addPost={setUserPosts} />
-      {userPosts.map((post) => (
-        <Post post={post} setPosts={setUserPosts} />
-      ))}
+      <div className="d-flex flex-column-reverse w-100">
+        {userPosts.map((post, index) => (
+          <Post post={post} key={index} setPosts={setUserPosts} />
+        ))}
+      </div>
     </Container>
   )
 }
