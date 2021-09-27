@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import NewPost from "./components/NewPost"
-import PostList from "./components/posts/PostList"
 import Container from "react-bootstrap/Container"
+import Post from "./components/posts/Post"
 
 const defaultPosts = [
   {
@@ -23,7 +23,9 @@ function App() {
   return (
     <Container className="d-flex flex-column align-items-center">
       <NewPost addPost={setUserPosts} />
-      <PostList posts={userPosts} setPosts={setUserPosts} />
+      {userPosts.map((post) => (
+        <Post post={post} setPosts={setUserPosts} />
+      ))}
     </Container>
   )
 }

@@ -1,12 +1,14 @@
 import React from "react"
 import AddComment from "./AddComment"
-import CommentList from "./CommentList"
+import Comment from "./Comment"
 
 const CommentSection = ({ setPosts, id, comments }) => {
   return (
     <>
       <AddComment addComment={setPosts} id={id} />
-      <CommentList comments={comments} />
+      {comments.map((comment) => (
+        <Comment comment={comment} />
+      ))}
     </>
   )
 }

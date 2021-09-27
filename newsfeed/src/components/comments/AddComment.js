@@ -5,9 +5,13 @@ import Image from "react-bootstrap/Image"
 // profile picture and text area to enter comment
 const AddComment = ({ addComment, id }) => {
   const [comment, setComment] = useState("")
+
+  // change for controlled input component
   const handleChange = (e) => {
     setComment(e.target.value)
   }
+
+  // adds a comment to list of comments for post with id
   const handleSubmit = (e) => {
     e.preventDefault()
     // prevents 'enter' key spam
