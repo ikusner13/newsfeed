@@ -15,7 +15,10 @@ const AddComment = ({ addComment, id }) => {
     addComment((prev) =>
       prev.map((data) =>
         data.id === id
-          ? { ...data, comments: [...data.comments, { text: comment }] }
+          ? {
+              ...data,
+              comments: [...data.comments, { text: comment, likes: 0 }],
+            }
           : data
       )
     )

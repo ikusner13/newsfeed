@@ -1,27 +1,7 @@
 import React from "react"
 import Card from "react-bootstrap/Card"
 import Image from "react-bootstrap/Image"
-import { faHeart, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons"
 import CommentOptions from "./CommentOptions"
-
-const commentOptionsList = [
-  {
-    text: " 0 Likes",
-    icon: null,
-  },
-  {
-    text: "Like",
-    icon: faHeart,
-  },
-  {
-    text: "Edit",
-    icon: faEdit,
-  },
-  {
-    text: "Delete",
-    icon: faTrash,
-  },
-]
 
 // displays profile picture with comment card
 const Comment = ({ comment }) => {
@@ -48,12 +28,12 @@ const Comment = ({ comment }) => {
             </h4>
             <div>11 minutes ago</div>
           </div>
-          <div style={{ color: "blue" }}>Professional-Student</div>
-          <div style={{ color: "black" }}>{comment.text}</div>
+          <div className="text-primary">Professional-Student</div>
+          <div className="text-dark">{comment.text}</div>
         </Card.Body>
         <Card.Body className="pt-0">
           <div className="d-flex flex-row">
-            <CommentOptions options={commentOptionsList} />
+            <CommentOptions likes={comment.likes} />
           </div>
         </Card.Body>
       </Card>

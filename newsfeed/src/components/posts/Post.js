@@ -4,13 +4,15 @@ import Image from "react-bootstrap/Image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
 import ActionButtons from "./ActionButtons"
-import UserCommentDetails from "./UserCommentDetails"
+import UserProfileDetails from "./UserProfileDetails"
 import CommentSection from "../comments/CommentSection"
 
 // post on newsfeed. including comments
 const Post = ({ post, setPosts }) => {
   const [showComments, setShowComments] = useState(false)
   const [toggleLiked, setToggleLiked] = useState(false)
+
+  // display that user has liked /unliked post, and update posts like number
   const handleLikes = () => {
     setToggleLiked((prev) => !prev)
     setPosts((prev) =>
@@ -21,11 +23,13 @@ const Post = ({ post, setPosts }) => {
       )
     )
   }
+
+  // if comment icons is clicked, show comment section
   const handleCommentClick = () => {
     setShowComments((prev) => !prev)
   }
   return (
-    <Card className="w-100">
+    <Card className="w-100 shadow-sm">
       <Card.Body className="d-flex pb-0">
         <Image
           src="avatar.png"
@@ -34,14 +38,16 @@ const Post = ({ post, setPosts }) => {
           roundedCircle
           className="me-2"
         />
-        <UserCommentDetails />
+        <UserProfileDetails />
       </Card.Body>
       <Card.Body className="pt-0">
         <Card.Text>{post.post}</Card.Text>
       </Card.Body>
       <Card.Body>
         <Card.Text className="d-flex flex-row">
-          <span>{post.likes} Likes</span>
+          <span style={{ opacity: post.likes === 0 && "60%" }}>
+            {post.likes} Likes
+          </span>
           <span className="d-flex justify-content-center align-items-center mx-1">
             <FontAwesomeIcon icon={faCircle} style={{ fontSize: "4px" }} />
           </span>

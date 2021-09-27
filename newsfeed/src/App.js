@@ -13,6 +13,7 @@ const defaultPosts = [
     comments: [
       {
         text: "This is what a comment looks like!",
+        likes: 0,
       },
     ],
   },

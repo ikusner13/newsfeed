@@ -15,6 +15,7 @@ const NewPost = ({ addPost }) => {
     setPost(e.target.value)
   }
 
+  // add post to list of posts upon submit
   const handleSubmit = (e) => {
     e.preventDefault()
     addPost((prev) => [
@@ -29,7 +30,7 @@ const NewPost = ({ addPost }) => {
     setPost("")
   }
   return (
-    <Card className="w-100">
+    <Card className="w-100 shadow-sm">
       <Form onSubmit={handleSubmit}>
         <Card.Body className="d-flex mb-5 ">
           <Image

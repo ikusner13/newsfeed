@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart, faCommentDots } from "@fortawesome/free-solid-svg-icons"
 
-// Like and Comment buttons on a post
+// updates likes and shows/hides comment section
 const ActionButtons = ({ handleLikes, handleCommentClick, toggleLiked }) => {
   return (
     <div className="d-flex  flex-row">
